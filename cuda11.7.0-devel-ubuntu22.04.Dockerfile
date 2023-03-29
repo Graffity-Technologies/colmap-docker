@@ -34,7 +34,7 @@ RUN apt-get update && apt-get install -y \
 # Build and install COLMAP.
 RUN git clone https://github.com/colmap/colmap.git
 RUN cd colmap && \
-    git checkout tags/${COLMAP_VERSION} -b ${COLMAP_VERSION}-branch \
+    git checkout tags/${COLMAP_VERSION} -b ${COLMAP_VERSION}-branch && \
     mkdir build && \
     cd build && \
     cmake .. -GNinja -DCMAKE_CUDA_ARCHITECTURES=${CUDA_ARCHITECTURES} && \
