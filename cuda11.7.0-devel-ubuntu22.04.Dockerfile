@@ -34,7 +34,6 @@ RUN apt-get update && apt-get install -y \
 # Build and install COLMAP.
 RUN git clone https://github.com/colmap/colmap.git
 RUN cd colmap && \
-    git fetch --all --tags \
     git checkout tags/${COLMAP_VERSION} -b ${COLMAP_VERSION}-branch \
     mkdir build && \
     cd build && \
