@@ -6,11 +6,11 @@
 git clone https://github.com/Graffity-Technologies/colmap-docker.git
 ```
 
-2. Specify `COLMAP_VERSION` and build colmap image. <br/>
-Note that `CUDA_ARCHITECTURES` may vary. Please see https://github.com/colmap/colmap/issues/1822 <br/>
+2. Specify `COLMAP_VERSION` from [colmap tags](https://github.com/colmap/colmap/tags) and build colmap image. <br/>
+Note that `CUDA_ARCHITECTURES` may vary. Please see [here](https://github.com/colmap/colmap/issues/1822) <br/>
 ```
 docker build -t graffitytech/colmap:<VERSION> \
---build-arg COLMAP_VERSION=3.8  \
+--build-arg COLMAP_VERSION=<VERSION>  \
 --build-arg CUDA_ARCHITECTURES=75  \
 --no-cache \
 -f cuda11.7.0-devel-ubuntu22.04.Dockerfile .
