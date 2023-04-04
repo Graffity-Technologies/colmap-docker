@@ -1,3 +1,13 @@
+## ENV on Each Version
+version 3.5, 3.6
+```
+export COLMAP_VERSION=3.5
+export DOCKERFILE=cuda10.2-devel-ubuntu18.04
+export CUDA_ARCHITECTURES=70
+```
+
+version 
+
 ## Step to reproduce
 
 0. Prepare CUDA-supported machine
@@ -24,13 +34,3 @@ docker build -t graffitytech/colmap:${COLMAP_VERSION}-${DOCKERFILE} \
 docker login
 docker push graffitytech/colmap:<VERSION>
 ```
-
-## ENV on Each Version
-version 3.5, 3.6
-```
-export COLMAP_VERSION=3.5
-export DOCKERFILE=cuda10.2-devel-ubuntu18.04
-export CUDA_ARCHITECTURES=70
-```
-
-version 
