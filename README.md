@@ -12,11 +12,11 @@ https://github.com/colmap/colmap/blob/3.8/docker/Dockerfile
 3. Specify `COLMAP_VERSION` from [colmap tags](https://github.com/colmap/colmap/tags) and build colmap image. <br/>
 Note that `CUDA_ARCHITECTURES` may vary. Please see [here](https://github.com/colmap/colmap/issues/1822) <br/>
 ```
-docker build -t graffitytech/colmap:<VERSION> \
---build-arg COLMAP_VERSION=<VERSION>  \
---build-arg CUDA_ARCHITECTURES=75  \
+docker build -t graffitytech/colmap:${COLMAP_VERSION}-${DOCKERFILE} \
+--build-arg COLMAP_VERSION=${COLMAP_VERSION}  \
+--build-arg CUDA_ARCHITECTURES=${CUDA_ARCHITECTURES}  \
 --no-cache \
--f cuda11.7.0-devel-ubuntu22.04.Dockerfile .
+-f ${DOCKERFILE}.Dockerfile .
 ```
 
 4. Login to dockerhub and push
@@ -24,3 +24,13 @@ docker build -t graffitytech/colmap:<VERSION> \
 docker login
 docker push graffitytech/colmap:<VERSION>
 ```
+
+## ENV on Each Version
+version 3.5, 3.6
+```
+export COLMAP_VERSION=3.5
+export DOCKERFILE=cuda10.2-devel-ubuntu18.04
+export CUDA_ARCHITECTURES=70
+```
+
+version 

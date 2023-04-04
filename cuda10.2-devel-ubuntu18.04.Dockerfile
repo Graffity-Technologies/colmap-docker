@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.1-devel-ubuntu18.04
+FROM nvidia/cuda:10.2-devel-ubuntu18.04
 
 ARG COLMAP_VERSION=
 ARG CUDA_ARCHITECTURES=
@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y \
     libboost-graph-dev \
     libboost-system-dev \
     libboost-test-dev \
+    libboost-all-dev \
     libeigen3-dev \
     libflann-dev \
     libfreeimage-dev \
