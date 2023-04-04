@@ -1,12 +1,17 @@
 ## ENV on Each Version
-version 3.5, 3.6
+version 3.5, 3.6, 3.7
 ```
 export COLMAP_VERSION=3.5
 export DOCKERFILE=cuda10.2-devel-ubuntu18.04
 export CUDA_ARCHITECTURES=70
 ```
 
-version 
+version 3.8
+```
+export COLMAP_VERSION=3.8
+export DOCKERFILE=cuda11.7.0-devel-ubuntu22.04
+export CUDA_ARCHITECTURES=70
+```
 
 ## Step to reproduce
 
